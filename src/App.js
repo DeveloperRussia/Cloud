@@ -8,6 +8,9 @@ function App() {
             <div className="parent">
                 <div className="left_nav">
                     <Category svgName="Home" />
+                    <Category svgName="Workspaces" />
+                    <Category svgName="Search" />
+                    <Category svgName="Notifications" />
                 </div>
                 <div className="page">2</div>
             </div>
