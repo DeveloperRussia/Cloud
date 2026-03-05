@@ -10,6 +10,7 @@
     cursor: pointer;
     align-items: center;
     transition: all 0.15s ease;
+    user-select: none;
 
     svg {
         width: 16px;
