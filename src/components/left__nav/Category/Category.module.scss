@@ -1,0 +1,36 @@
+.category {
+    width: 240px;
+    height: 32px;
+    display: flex;
+    gap: 10px;
+    padding: 0 16px;
+    border-radius: 8px;
+    color: #5b5b5b;
+    font-size: 14px;
+    cursor: pointer;
+    align-items: center;
+    transition: all 0.15s ease;
+
+    svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    &:hover {
+        background-color: rgba(59, 130, 246, 0.12);
+        color: #3b82f6;
+
+        svg path {
+            stroke: #3b82f6;
+        }
+    }
+
+    &:active {
+        background-color: rgba(59, 130, 246, 0.2);
+        color: #2563eb;
+
+        svg path {
+            stroke: #2563eb;
+        }
+    }
+}
