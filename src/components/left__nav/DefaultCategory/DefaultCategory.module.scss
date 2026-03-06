@@ -1,0 +1,27 @@
+.mainCategory {
+    display: flex;
+    flex-direction: column;
+    gap: 8.5px;
+    width: 100%;
+    cursor: pointer;
+    color: #7c7c7c;
+    padding: 16px;
+    font-size: 12px;
+    position: relative;
+    user-select: none;
+
+    &:hover {
+        color: #1f1f1f;
+    }
+}
+
+.allCategory {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+
+    > div {
+        padding: 0;
+    }
+}

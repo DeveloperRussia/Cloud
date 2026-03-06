@@ -117,4 +117,11 @@ input[type='file'] {
 }
 .left_nav {
     width: 300px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    > :last-child {
+        margin-top: auto;
+    }
 }
