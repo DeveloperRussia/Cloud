@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Cloud/static/css/main.df369e36.css",
+    "main.js": "/Cloud/static/js/main.1b93f879.js",
+    "index.html": "/Cloud/index.html",
+    "main.df369e36.css.map": "/Cloud/static/css/main.df369e36.css.map",
+    "main.1b93f879.js.map": "/Cloud/static/js/main.1b93f879.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.df369e36.css",
+    "static/js/main.1b93f879.js"
+  ]
+}
