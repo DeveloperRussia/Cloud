@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classes from './MainCategory.module.scss';
 
 function MainCategory({ categoryName, categoryItem }) {
-    const allCategories = [{ nameCategory: 'Categories', categoryItem }];
-    const current = allCategories.find((item) => item.nameCategory === categoryName);
+    const [isOpen, setIsOpen] = useState(true);
+
+    const toggleOpen = () => {
+        setIsOpen((prev) => !prev);
+    };
+
     return (
         <div className={classes.mainCategory}>
-            {current?.nameCategory}
-            <div className={classes.allCategory}>{categoryItem}</div>
+            <div className={classes.header} onClick={toggleOpen}>
+                {categoryName}
+                <span className={`${classes.arrow} ${isOpen ? classes.open : ''}`} />
+            </div>
+            {isOpen && <div className={classes.allCategory}>{categoryItem}</div>}
         </div>
     );
 }

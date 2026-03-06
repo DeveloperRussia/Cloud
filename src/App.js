@@ -15,8 +15,12 @@ function App() {
                     <MainCategory
                         categoryName="Categories"
                         categoryItem={[
-                            <Category svgName="Home" />,
-                            <Category svgName="Workspaces" />,
+                            <Category svgName="Photos" />,
+                            <Category svgName="Videos" />,
+                            <Category svgName="Documents" />,
+                            <Category svgName="Audio" />,
+                            <Category svgName="Shared with me" />,
+                            <Category svgName="Trash" />,
                         ]}
                     />
                 </div>
