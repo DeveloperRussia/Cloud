@@ -6,7 +6,7 @@
     padding: 0 16px;
     border-radius: 8px;
     color: #5b5b5b;
-    font-size: 14px;
+    font-size: 18px;
     cursor: pointer;
     align-items: center;
     transition: all 0.15s ease;
@@ -24,6 +24,9 @@
         svg path {
             stroke: #3b82f6;
         }
+        svg {
+            fill: #3b82f6;
+        }
     }
 
     &:active {
@@ -32,6 +35,9 @@
 
         svg path {
             stroke: #2563eb;
+        }
+        svg {
+            fill: #2563eb;
         }
     }
 }
