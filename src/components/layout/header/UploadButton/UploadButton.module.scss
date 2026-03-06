@@ -1,0 +1,14 @@
+.btnUpload {
+    background-color: #497fff;
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+}

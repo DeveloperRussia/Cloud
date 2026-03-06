@@ -5,12 +5,13 @@ import MainCategory from './components/left__nav/MainCategory/MainCategory';
 import DefaultCategory from './components/left__nav/DefaultCategory/DefaultCategory';
 import { slidebarData } from './data/slidebarData';
 import CurrentNamePage from './components/layout/header/CurrentNamePage/CurrentNamePage';
-
+import UploadButton from './components/layout/header/UploadButton/UploadButton';
+import UploadModal from './components/modalWindows/UploadModal/UploadModal';
 function App() {
     const [currentPage, setCurrentPage] = useState('Home');
 
     const currentItem = slidebarData.find((item) => item.name === currentPage);
-
+    const [isModalOpen, setIsModalOpen] = useState(false);
     return (
         <div className="App">
             <div className="parent">
@@ -106,8 +107,17 @@ function App() {
 
                 <div className="page">
                     <CurrentNamePage currentItem={currentItem} />
+                    <UploadButton onOpen={() => setIsModalOpen(true)} />
                 </div>
             </div>
+            <UploadModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                onFileChange={(e) => {
+                    const file = e.target.files[0];
+                    console.log(file);
+                }}
+            />
         </div>
     );
 }
