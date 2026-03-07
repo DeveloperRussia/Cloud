@@ -2,7 +2,8 @@ import avatar from '../assets/testAvatar.png';
 
 export const allUsersTempl = [
     {
-        userName: `Makar`,
+        userName: 'Makar',
         picSrc: avatar,
+        files: [],
     },
 ];

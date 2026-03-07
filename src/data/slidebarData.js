@@ -36,7 +36,7 @@ export const slidebarData = [
                     fillOpacity=".4"
                     fillRule="evenodd"
                     d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11M2 9a7 7 0 1 1 12.45 4.4l3.33 3.32a.75.75 0 1 1-1.06 1.06l-3.33-3.33A7 7 0 0 1 2 9"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                 />
             </svg>
         ),

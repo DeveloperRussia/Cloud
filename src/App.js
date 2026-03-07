@@ -3,18 +3,27 @@ import './styles/scss/app.scss';
 import Category from './components/left__nav/Category/Category';
 import MainCategory from './components/left__nav/MainCategory/MainCategory';
 import DefaultCategory from './components/left__nav/DefaultCategory/DefaultCategory';
-// ---
 import { slidebarData } from './data/slidebarData';
-import CurrentNamePage from './components/layout/header/CurrentNamePage/CurrentNamePage';
-import UploadButton from './components/layout/header/UploadButton/UploadButton';
 import UploadModal from './components/modalWindows/UploadModal/UploadModal';
-import { allUsersTempl } from './data/allUsersTempl';
-import CurrentUser from './components/layout/header/CurrentUser/CurrentUser';
 import Head from './components/layout/header/Head/Head';
+import Search from './components/layout/Search/Search';
+import AllFiles from './components/layout/pageElement/AllFiles/AllFiles';
+import { useUserFiles } from './hooks/useUserFiles';
+
 function App() {
     const [currentPage, setCurrentPage] = useState('Home');
-    const currentItem = slidebarData.find((item) => item.name === currentPage);
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const currentItem = slidebarData.find((item) => item.name === currentPage);
+    const { files, addFileToCurrentUser } = useUserFiles();
+
+    const handleFileChange = (e) => {
+        const selectedFile = e.target.files[0];
+        addFileToCurrentUser(selectedFile);
+        setIsModalOpen(false);
+        e.target.value = '';
+    };
+
     return (
         <div className="App">
             <div className="parent">
@@ -110,15 +119,15 @@ function App() {
 
                 <div className="page">
                     <Head currentItem={currentItem} onUploadClick={() => setIsModalOpen(true)} />
+                    <Search />
+                    <AllFiles files={files} />
                 </div>
             </div>
+
             <UploadModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
-                onFileChange={(e) => {
-                    const file = e.target.files[0];
-                    console.log(file);
-                }}
+                onFileChange={handleFileChange}
             />
         </div>
     );

@@ -3,13 +3,18 @@ import CurrentNamePage from '../CurrentNamePage/CurrentNamePage';
 import UploadButton from '../UploadButton/UploadButton';
 import { allUsersTempl } from '../../../../data/allUsersTempl';
 import CurrentUser from '../CurrentUser/CurrentUser';
-
+import classes from './Head.module.scss';
 function Head({ currentItem, onUploadClick }) {
     return (
-        <div>
+        <div className={classes.head}>
             <CurrentNamePage currentItem={currentItem} />
-            <UploadButton onOpen={onUploadClick} />
-            <CurrentUser userName={allUsersTempl[0].userName} userSrc={allUsersTempl[0].picSrc} />
+            <div className={classes.combo}>
+                <UploadButton onOpen={onUploadClick} />
+                <CurrentUser
+                    userName={allUsersTempl[0].userName}
+                    userSrc={allUsersTempl[0].picSrc}
+                />
+            </div>
         </div>
     );
 }
