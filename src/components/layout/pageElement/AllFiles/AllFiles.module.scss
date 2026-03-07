@@ -1,89 +1,275 @@
-.files {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
+.container {
+    max-width: 820px;
 }
 
-.file {
+.top {
     display: flex;
-    flex-direction: column;
-    width: 180px;
-    padding: 12px;
-    background-color: #f6f8ff;
-    border-radius: 8px;
-    gap: 12px;
-    font-size: 15px;
-    color: #1a1a1a;
-    letter-spacing: -1%;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 16px;
+}
+
+.viewActions {
+    display: flex;
+    gap: 10px;
+}
+
+.iconBtn {
+    border: none;
+    background: transparent;
     cursor: pointer;
+}
+
+.filters {
+    display: flex;
+    gap: 12px;
+
+    margin-bottom: 24px;
+}
+
+.filterBtn {
+    border: 1px solid #cbcbcf;
+
+    border-radius: 8px;
+
+    padding: 5px 14px;
+
+    font-size: 13px;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.filterBtn:hover {
+    background: #f2f3f6;
+}
+
+.activeFilter {
+    background: #eef3ff;
+    border-color: #4c7cf6;
+}
+
+.grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 14px 24px;
+
+    margin-bottom: 26px;
+}
+
+.folderCard,
+.fileCard {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    border-radius: 10px;
+    background: #eceef3;
+    cursor: pointer;
+    transition: 0.2s;
     user-select: none;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+.folderCard:hover,
+.fileCard:hover {
+    background: #e4e7ef;
 }
 
-.previewWrapper {
-    width: 100%;
-    height: 120px;
-    border-radius: 8px;
-    overflow: hidden;
-    background: #e9edff;
-}
-
-.preview {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.previewFallback {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-transform: capitalize;
-    font-weight: 600;
-}
-
-.meta {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
+.folderName,
 .fileName {
-    margin: 0;
-    word-break: break-word;
-}
+    font-size: 14px;
 
-.fileType {
-    font-size: 13px;
-    color: #6b7280;
-    text-transform: capitalize;
-}
+    white-space: nowrap;
 
-.empty {
-    color: #6b7280;
+    overflow: hidden;
+
+    text-overflow: ellipsis;
 }
 
 .preview {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    flex-shrink: 0;
 }
 
 .previewImg {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
+
+    border-radius: 4px;
+
     object-fit: cover;
+}
+
+.fileSvg,
+.folderSvg {
+    width: 18px;
+    height: 18px;
+}
+
+.previewOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    z-index: 1000;
+}
+
+.previewModal {
+    width: min(1000px, 100%);
+    height: min(85vh, 800px);
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+.previewHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    border-bottom: 1px solid #ececec;
+}
+
+.previewFileInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.previewHeaderIcon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.previewFileName {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f1f1f;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.previewCloseBtn {
+    border: none;
+    background: transparent;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    color: #444;
+}
+
+.previewBody {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #f8f9fb;
+}
+
+.modalImage {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.modalMedia {
+    width: 100%;
+    max-height: 100%;
+    border-radius: 12px;
+    background: #000;
+}
+
+.modalAudio {
+    width: min(700px, 100%);
+}
+
+.modalFrame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #fff;
+    border-radius: 12px;
+}
+
+.modalText {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 18px;
+    overflow: auto;
+    background: #fff;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.modalFallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 24px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+    background: #fff;
+    border-radius: 12px;
+}
+
+.modalFallbackIcon {
+    width: 64px;
+    height: 64px;
+}
+
+.modalFallbackTitle {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.modalFallbackText {
+    margin: 0;
+    color: #666;
+}
+
+.openInNewTab {
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: #111;
+    color: #fff;
+    font-weight: 500;
+}
+
+.fileCard {
+    cursor: pointer;
 }

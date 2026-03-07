@@ -32,9 +32,9 @@ export const getFilePreviewType = (file) => {
         return 'xls';
     }
 
-    if (fileName.endsWith('.txt') || fileName.endsWith('.doc') || fileName.endsWith('.docx')) {
-        return 'txt';
-    }
+    if (fileName.endsWith('.txt')) return 'txt';
+    if (fileName.endsWith('.docx')) return 'docx';
+    if (fileName.endsWith('.doc')) return 'doc';
 
     if (
         fileName.endsWith('.png') ||
